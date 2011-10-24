@@ -1,6 +1,6 @@
 var win = Titanium.UI.currentWindow;
 Ti.include('config.js');
-Ti.include('actionbar.js');
+Ti.include('actionbar.js'); /* icons on top navbar*/
 
 Ti.UI.currentTab.globalConf = Configuration;
 var config = Ti.UI.currentTab.globalConf;
@@ -10,15 +10,21 @@ var actInd = Titanium.UI.createActivityIndicator({
 	width:10,
 	message: 'Loading...',
 });
-var currentServer, currentUrl, tableview,
+var currentServer, currentUrl, tableview, ctr, rowContainer,
 	tableData = [];
 	
 onloadCallback = function() {
 	try {
 		var xmlMessage = this.responseXML;
 		var entryTags = xmlMessage.documentElement.getElementsByTagName("entry");
+		/**
+		 * start off with icon for invalid server
+		 */
 		var statusIcon = 'none.png';
 		if (xmlMessage && entryTags.length > 0) {
+		/**
+		 * if xml is valid set stable icon by default
+		 */
 		statusIcon = 'add.png'; //green by default
 		for (var i=0; i < entryTags.length; i++) {
 			var nodetitle = entryTags.item(i).getElementsByTagName("title").item(0).text,
@@ -27,6 +33,9 @@ onloadCallback = function() {
 			if (buildNameEnd < 0) continue;
 			var status = nodetitle.substr(buildNumberEnd);
 			if (status.indexOf('(stable)') < 0 && status.indexOf('normal') < 0 && status.indexOf('?') < 0){
+				/**
+				 * failure icon
+				 */
 				statusIcon = 'warning.png';
 			}
 		};
@@ -37,7 +46,37 @@ onloadCallback = function() {
 				serverName = tableData[idx]['title'];
 			}
 		}
-		tableview.appendRow({leftImage:statusIcon, title:serverName, backgroundColor:'pink'});
+		/**
+		 * drawing rows here
+		 */
+		
+		tableview.appendRow({leftImage:statusIcon, title:serverName});
+			// rowContainer = Titanium.UI.createTableViewRow({
+				// height:90
+			// });
+			// var boxView = Titanium.UI.createView({
+				// width: 150,
+				// height: 80,
+				// borderColor:'#999',
+				// borderWidth:2,
+				// backgroundColor: '#fff'
+			// });
+			// var image = Titanium.UI.createImageView({
+				// url:statusIcon,
+				// width: 30,
+				// height: 30,
+				// top: 10
+			// });
+			// boxView.add(image);
+			// var label = Titanium.UI.createLabel({
+				// text:serverName,
+				// top: 50,
+				// font:{fontSize:20, fontFamily:'Arial', fontWeight: 'bold'}
+			// });
+			// boxView.add(label);
+			// rowContainer.add(boxView);
+// 		
+			// tableview.appendRow(rowContainer);
 	} catch (e) {
 		Titanium.API.debug(e);
 	}
@@ -52,7 +91,8 @@ httpRequest = function () {
 
 mytablerocks = function(){
 	tableview = Titanium.UI.createTableView({
-		top:100
+		top:100,
+		// separatorColor: 'transparent'
 	});
 	win.add(tableview);
 	for (var a in config){
@@ -65,20 +105,20 @@ mytablerocks = function(){
 	}
 	
 	tableview.addEventListener('click', function(e){
-	if (e.rowData.title && e.rowData.leftImage !== 'none.png'){
-		var detailwin = Titanium.UI.createWindow({
-			url:'details.js',
-			title:e.rowData.title,
-			backgroundColor: '#fff',
-			top:100,
-			navBarHidden:true,
-			prev:win
-		});
-		Titanium.UI.currentTab.open(detailwin,{animated:true});
-	} else {
-		alert('Url seems to be invalid. Change your settings');
-	}
-});
+		if (e.rowData.title && e.rowData.leftImage !== 'none.png'){
+			var detailwin = Titanium.UI.createWindow({
+				url:'details.js',
+				title:e.rowData.title,
+				backgroundColor: '#e1e1e1',
+				top:100,
+				navBarHidden:true,
+				prev:win
+			});
+			Titanium.UI.currentTab.open(detailwin,{animated:true});
+		} else {
+			alert('Url seems to be invalid. Change your settings');
+		}
+	});
 };
 
 //render table
@@ -94,18 +134,5 @@ refreshbutton.addEventListener('click', function(){
 quitbutton.addEventListener('click', function(){
 	win.close();
 });
-
-// create table view event listener
-// tableview.addEventListener('click', function(e){
-	// if (e.rowData.title){
-		// var detailwin = Titanium.UI.createWindow({
-			// url:'details.js',
-			// title:e.rowData.title,
-			// backgroundColor: '#fff',
-			// top:100
-		// });
-		// Titanium.UI.currentTab.open(detailwin,{animated:true});
-	// }
-// });
 
 

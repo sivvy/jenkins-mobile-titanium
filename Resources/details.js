@@ -1,7 +1,5 @@
 var win = Titanium.UI.currentWindow;
 // win.setLeftNavButton('servers.js');
-// Ti.include('config.js');
-// Ti.API.log('', '***********contextsharing::'+Ti.UI.currentTab.a);
 Ti.include('actionbar.js');
 
 var xhr, doc, tableview;
@@ -14,19 +12,13 @@ var actInd = Titanium.UI.createActivityIndicator({
 var conf = Ti.UI.currentTab.globalConf,
 	currentServer = Ti.UI.currentWindow.title,
 	currentUrl = conf[currentServer]["url"];
-Ti.API.log('', 'My Conf :: '+conf+' Title:'+currentServer+' Url:'+currentUrl);
 
 onloadCallback = function() {
 	actInd.show();
 	try {
-		Titanium.API.log('', '***** Response Xml: ' + this.responseXML);
-		Titanium.API.log('', '***** Response Xml: ' + this.responseText);
 		var xmlMessage = this.responseXML;
-		Titanium.API.log('', '***** Parsed Xml Message: ' + xmlMessage);
 		var titleTags = xmlMessage.documentElement.getElementsByTagName("title");
 		var entryTags = xmlMessage.documentElement.getElementsByTagName("entry");
-		Titanium.API.log('', '***** Title tag List:'+titleTags.length+
-		'\n***** Entry tag List:'+entryTags.length);
 		var builds = [], customData = [];
 		for (var i=0; i < entryTags.length; i++) {
 			var buildName,
@@ -38,17 +30,16 @@ onloadCallback = function() {
 		  	if (buildNameEnd < 0) continue;
 		  	buildName = nodetitle.slice(0, buildNameEnd);
 		  	if(builds.inArray(buildName) == false) {
-		  		Ti.API.log('', 'buildName: '+buildName);
-		  		Ti.API.log('', 'title:'+nodetitle+' idtag:'+nodeIdTag+' pub:'+nodePublish);
 				builds.push(buildName);
 				var status = nodetitle.substr(buildNumberEnd),
 					statusIcon;
+				/* determine icon here */
 				if (status.indexOf('(stable)') >= 0 || status.indexOf('normal') >= 0) {
-					statusIcon = 'add.png';
+					statusIcon = 'icon-stable.png'; /*stable */
 				} else if (status.indexOf('?') >= 0) {
-					statusIcon = 'loading.png';
+					statusIcon = 'icon-building.png';/* building */
 				} else{
-					statusIcon = 'warning.png';
+					statusIcon = 'icon-fail.png';/* failure */
 				};
 		        /* date */
 		        var date = nodePublish.slice(0, nodePublish.indexOf('T')),
@@ -70,7 +61,6 @@ onloadCallback = function() {
 	       top:160,
 	    });
 	    win.add(tableview);
-		Ti.API.log('', 'array: '+builds.length);
 	} catch (e) {
 		Titanium.API.debug(e);
 	}
@@ -101,61 +91,83 @@ Array.prototype.inArray = function (value)
 };
 
 drawTableRows = function(data){
+	/**
+	 * drawing tables here
+	 */
 	var tableData = [];
 	
 	for (var i  = 0; i < data.length; i++){
 		var currentRow = Ti.UI.createTableViewRow();
 		
+		/**
+		 * status icon 
+		 */
 		var statusImage = Ti.UI.createImageView({
 			url:data[i].status,
-			width:40,
-			height:40,
+			width:57,
+			height:46,
 			left:5,
 			top:10
 		});
 		
+		/**
+		 * build name
+		 */
 		var nameLabel = Ti.UI.createLabel({
 			text:data[i].name,
+			color:'#0c67d1',
 			font:{fontSize:14,fontFamily:'Arial',fontWeight:'bold'},
 			height:20,
-			left:50,
-			top:0
+			left:80,
+			top:5
 		});
 		
+		/**
+		 * build number
+		 */
 		var numberLabel = Ti.UI.createLabel({
 			text:data[i].number,
+			color:'#0c67d1',
 			font:{fontSize:14,fontFamily:'Arial'},
 			height:20,
-			left:50,
+			left:80,
 			top:20
 		});
-		
+		/**
+		 * build date
+		 */
 		var dateLabel = Ti.UI.createLabel({
 			text:data[i].buildDate,
+			color:'#424242',
 			font:{fontSize:14,fontFamily:'Arial'},
 			height:15,
-			left:50,
-			top:40
+			left:80,
+			top:35
 		});
 		
+		/**
+		 * build time
+		 */
 		var timeImage = Ti.UI.createImageView({
-			url:'delete.png',
+			url:'icon-time.png', /* crappy time icon */
 			width:10,
 			height:10,
-			left:0
+			left:0,
+			top:8
 		});
 		
 		var timeLabel = Ti.UI.createLabel({
 			text:data[i].buildTime,
-			font:{fontSize:14,fontFamily:'Arial'},
+			color:'#888686',
+			font:{fontSize:11,fontFamily:'Arial'},
 			height:15,
-			left:15
+			left:13
 		});
 		
 		var timeView = Ti.UI.createView({
-			height:15,
-			left:50,
-			top:55
+			height:25,
+			left:80,
+			top:45
 		});
 		timeView.add(timeImage);
 		timeView.add(timeLabel);

@@ -25,16 +25,15 @@ var Configuration = {
 	}
 };
 
-// var Configuration = {};
 if (serverList !== null){
-for (var i=0; i < serverList.length; i++) {
-	var serverTitle = serverList[i]['title'] || "";
-	Ti.API.log('', 'server TITLE::'+serverTitle+' url:'+serverList[i]['url']);
-  	if (serverTitle !== "" && !Configuration[serverTitle]){
-  		Configuration[serverTitle] = {};
-  		Configuration[serverTitle]['url'] = serverList[i]["url"];
-  		Configuration[serverTitle]["visible"] = true;
-  	}
-}
+	for (var i=0; i < serverList.length; i++) {
+		var serverTitle = serverList[i]['title'] || "";
+		Ti.API.log('', 'server TITLE::'+serverTitle+' url:'+serverList[i]['url']);
+	  	if (serverTitle !== "" && !Configuration[serverTitle]){
+	  		Configuration[serverTitle] = {};
+	  		Configuration[serverTitle]['url'] = serverList[i]["url"];
+	  		Configuration[serverTitle]["visible"] = true;
+	  	}
+	}
 }
 

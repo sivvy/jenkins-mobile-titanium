@@ -1,22 +1,26 @@
 // this sets the background color of the master UIView (when there are no windows/tab groups on it)
 Titanium.UI.setBackgroundColor('#fff');
-// Ti.include('config.js');
 
+/**
+ * intro : splash screen
+ */
 var intro = Titanium.UI.createWindow({
 	backgroundColor:'#151681',
 	navBarHidden:true
 });
-var introLabel = Titanium.UI.createLabel({
-	text: 'Jenkins',
-	font:{fontSize:30,fontFamily:'Courier',fontWeight:'bold'},
-	color:'#999',
-	textAlign:'center'
+var introLogo= Titanium.UI.createImageView({
+	url: 'logo-jenkins.png',
+	width:71,
+	height:71
 })
-intro.add(introLabel);
+intro.add(introLogo);
 intro.open();
 setTimeout(function(){
 	intro.close();
 	var tabGroup = Titanium.UI.createTabGroup();
+	/**
+	 * servers window
+	 */
 	var servers = Titanium.UI.createWindow({
 		url:'servers.js',
 		backgroundColor:'#fff',
@@ -27,15 +31,8 @@ setTimeout(function(){
 	var tab = Titanium.UI.createTab({
 		title:"Jenkins Servers",
 		window:servers,
-		// globalConf:Configuration
 	});
 	tabGroup.addTab(tab);
 	tabGroup.open();
-	// var log = Titanium.UI.createWindow({
-		// url:'login.js',
-		// backgroundColor:'#fff',
-		// title: 'Login'
-	// });
-	// log.open();
 }, 2000);
 
