@@ -9,7 +9,7 @@
     </deployment-targets>
     <id>com.mobile.jenkins</id>
     <name>jenkins_status</name>
-    <version>1.0</version>
+    <version>1.1</version>
     <publisher>sivvy</publisher>
     <url>http://192.168.3.130</url>
     <description>not specified</description>

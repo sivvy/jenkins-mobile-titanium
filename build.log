@@ -1,18 +1,79 @@
 Logfile initialized
 [INFO] logfile = /home/sivvy/Titanium Studio Workspace/jenkins_status/build.log
-[DEBUG] /home/sivvy/.titanium/mobilesdk/linux/1.7.2/android/builder.py install jenkins_status /home/sivvy/Desktop/android-sdk-linux_x86 /home/sivvy/Titanium Studio Workspace/jenkins_status com.mobile.jenkins 7
-[INFO] Titanium SDK version: 1.7.2 (07/21/11 09:36 97c3689)
+[DEBUG] /home/sivvy/.titanium/mobilesdk/linux/1.7.3/android/builder.py simulator jenkins_status /home/sivvy/Desktop/android-sdk-linux_x86 /home/sivvy/Titanium Studio Workspace/jenkins_status com.mobile.jenkins 7 WVGA854 
+[INFO] Building jenkins_status for Android ... one moment
+[INFO] Titanium SDK version: 1.7.3 (10/17/11 13:44 dcf4257)
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
-[DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.003731 seconds on emulator to get ready
-[DEBUG] com.mobile.jenkins installed? False
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[DEBUG] Device connected... (waited 25 seconds)
+[DEBUG] waited 25.321020 seconds on emulator to get ready
+[INFO] Waiting for the Android Emulator to become available
+[DEBUG] com.mobile.jenkins installed? True
+[INFO] Fastdev server running, deploying in Fastdev mode
 [INFO] Copying project resources..
-[TRACE] COPYING MODIFIED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/servers.js => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/servers.js
-[TRACE] COPYING MODIFIED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/actionbar.js => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/actionbar.js
-[TRACE] COPYING MODIFIED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/details.js => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/details.js
+[INFO] Detected tiapp.xml change (or assets deleted), forcing full re-build...
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/images/logo-jenkins-moustache.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/images/logo-jenkins-moustache.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/images/icon-refresh-inactive.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/images/icon-refresh-inactive.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/images/icon-stable.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/images/icon-stable.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/images/checkAll.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/images/checkAll.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/images/none.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/images/none.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/images/uncheckAll.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/images/uncheckAll.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/images/icon-time.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/images/icon-time.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/images/icon-add.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/images/icon-add.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/images/icon-warning.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/images/icon-warning.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/images/icon-settings-active.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/images/icon-settings-active.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/images/icon-delete.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/images/icon-delete.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/images/icon-fail.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/images/icon-fail.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/images/icon-server-fail.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/images/icon-server-fail.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/images/jenkins-icon_23.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/images/jenkins-icon_23.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/images/warning.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/images/warning.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/images/KS_nav_views.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/images/KS_nav_views.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/images/icon-unselect.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/images/icon-unselect.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/images/icon-refresh-active.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/images/icon-refresh-active.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/images/icon-home-inactive.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/images/icon-home-inactive.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/images/icon-settings-inactive.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/images/icon-settings-inactive.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/images/icon-server-stable.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/images/icon-server-stable.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/images/icon-quit-active.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/images/icon-quit-active.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/images/icon-server-error.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/images/icon-server-error.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/images/icon-server-building.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/images/icon-server-building.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/images/icon-quit-inactive.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/images/icon-quit-inactive.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/images/btn-done.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/images/btn-done.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/images/icon-select.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/images/icon-select.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/images/delete.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/images/delete.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/images/KS_nav_ui.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/images/KS_nav_ui.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/images/icon-settings-main.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/images/icon-settings-main.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/images/logo-jenkins.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/images/logo-jenkins.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/images/icon-building.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/images/icon-building.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/images/add.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/images/add.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/images/icon-home-active.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/images/icon-home-active.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/images/loading.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/images/loading.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/config/config.js => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/config/config.js
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/android/default.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/default.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/android/appicon.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/appicon.png
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/ui/detailView.js => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/ui/detailView.js
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/ui/serverView.js => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/ui/serverView.js
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/ui/index.js => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/ui/index.js
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/ui/main.js => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/ui/main.js
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/ui/settingView.js => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/ui/settingView.js
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/ui/topNavigator.js => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/ui/topNavigator.js
+[TRACE] COPYING CREATED FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/app.js => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/app.js
 [TRACE] Generating Java Classes
 [DEBUG] Processing Android resource drawables
+[TRACE] COPYING FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/android/images/res-long-land-hdpi/default.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/res/drawable-long-land-hdpi/default_d44e27d97b.png
+[TRACE] COPYING FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/android/images/res-long-port-ldpi/default.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/res/drawable-long-port-ldpi/default_d44e27d97b.png
+[TRACE] COPYING FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/android/images/res-long-land-ldpi/default.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/res/drawable-long-land-ldpi/default_d44e27d97b.png
+[TRACE] COPYING FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/android/images/res-long-port-hdpi/default.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/res/drawable-long-port-hdpi/default_d44e27d97b.png
+[TRACE] COPYING FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/android/images/res-notlong-port-ldpi/default.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/res/drawable-notlong-port-ldpi/default_d44e27d97b.png
+[TRACE] COPYING FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/android/images/res-notlong-port-mdpi/default.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/res/drawable-notlong-port-mdpi/default_d44e27d97b.png
+[TRACE] COPYING FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/android/images/res-notlong-land-hdpi/default.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/res/drawable-notlong-land-hdpi/default_d44e27d97b.png
+[TRACE] COPYING FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/android/images/res-notlong-port-hdpi/default.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/res/drawable-notlong-port-hdpi/default_d44e27d97b.png
+[TRACE] COPYING FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/android/images/res-notlong-land-mdpi/default.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/res/drawable-notlong-land-mdpi/default_d44e27d97b.png
+[TRACE] COPYING FILE: /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/android/images/res-notlong-land-ldpi/default.png => /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/res/drawable-notlong-land-ldpi/default_d44e27d97b.png
 [DEBUG] copying app icon: /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/assets/Resources/appicon.png
 [DEBUG] generating theme.xml
 [DEBUG] found drawable-long-land-hdpi splash screen at /home/sivvy/Titanium Studio Workspace/jenkins_status/Resources/android/images/res-long-land-hdpi/default.png
@@ -42,69 +103,120 @@ Logfile initialized
 [DEBUG] adding /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/gen/com/mobile/jenkins/Jenkins_statusActivity.java to javac build list
 [DEBUG] adding /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/gen/com/mobile/jenkins/R.java to javac build list
 [DEBUG] Building Java Sources: "/home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/gen/com/mobile/jenkins/Jenkins_statusAppInfo.java" "/home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/gen/com/mobile/jenkins/Jenkins_statusApplication.java" "/home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/gen/com/mobile/jenkins/Jenkins_statusActivity.java" "/home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/gen/com/mobile/jenkins/R.java"
+[INFO] Waiting for SDCard to become available..
 [INFO] Compiling Android Resources... This could take some time
 [DEBUG] Android classes.dex built
 [DEBUG] creating unsigned apk: /home/sivvy/Titanium Studio Workspace/jenkins_status/build/android/bin/app-unsigned.apk
-[DEBUG] from resource zip => assets/Resources/KS_nav_ui.png
-[DEBUG] from resource zip => assets/Resources/KS_nav_views.png
-[DEBUG] from resource zip => assets/Resources/actionbar.js
-[DEBUG] from resource zip => assets/Resources/add.png
+[DEBUG] from resource zip => assets/Resources/config/config.js
+[DEBUG] from resource zip => assets/Resources/images/KS_nav_ui.png
+[DEBUG] from resource zip => assets/Resources/images/KS_nav_views.png
+[DEBUG] from resource zip => assets/Resources/images/add.png
+[DEBUG] from resource zip => assets/Resources/images/btn-done.png
+[DEBUG] from resource zip => assets/Resources/images/checkAll.png
+[DEBUG] from resource zip => assets/Resources/images/delete.png
+[DEBUG] from resource zip => assets/Resources/images/icon-add.png
+[DEBUG] from resource zip => assets/Resources/images/icon-building.png
+[DEBUG] from resource zip => assets/Resources/images/icon-delete.png
+[DEBUG] from resource zip => assets/Resources/images/icon-fail.png
+[DEBUG] from resource zip => assets/Resources/images/icon-home-active.png
+[DEBUG] from resource zip => assets/Resources/images/icon-home-inactive.png
+[DEBUG] from resource zip => assets/Resources/images/icon-quit-active.png
+[DEBUG] from resource zip => assets/Resources/images/icon-quit-inactive.png
+[DEBUG] from resource zip => assets/Resources/images/icon-refresh-active.png
+[DEBUG] from resource zip => assets/Resources/images/icon-refresh-inactive.png
+[DEBUG] from resource zip => assets/Resources/images/icon-select.png
+[DEBUG] from resource zip => assets/Resources/images/icon-server-building.png
+[DEBUG] from resource zip => assets/Resources/images/icon-server-error.png
+[DEBUG] from resource zip => assets/Resources/images/icon-server-fail.png
+[DEBUG] from resource zip => assets/Resources/images/icon-server-stable.png
+[DEBUG] from resource zip => assets/Resources/images/icon-settings-active.png
+[DEBUG] from resource zip => assets/Resources/images/icon-settings-inactive.png
+[DEBUG] from resource zip => assets/Resources/images/icon-settings-main.png
+[DEBUG] from resource zip => assets/Resources/images/icon-stable.png
+[DEBUG] from resource zip => assets/Resources/images/icon-time.png
+[DEBUG] from resource zip => assets/Resources/images/icon-unselect.png
+[DEBUG] from resource zip => assets/Resources/images/icon-warning.png
+[DEBUG] from resource zip => assets/Resources/images/jenkins-icon_23.png
+[DEBUG] from resource zip => assets/Resources/images/loading.png
+[DEBUG] from resource zip => assets/Resources/images/logo-jenkins-moustache.png
+[DEBUG] from resource zip => assets/Resources/images/logo-jenkins.png
+[DEBUG] from resource zip => assets/Resources/images/none.png
+[DEBUG] from resource zip => assets/Resources/images/uncheckAll.png
+[DEBUG] from resource zip => assets/Resources/images/warning.png
+[DEBUG] from resource zip => assets/Resources/ui/detailView.js
+[DEBUG] from resource zip => assets/Resources/ui/index.js
+[DEBUG] from resource zip => assets/Resources/ui/main.js
+[DEBUG] from resource zip => assets/Resources/ui/serverView.js
+[DEBUG] from resource zip => assets/Resources/ui/settingView.js
+[DEBUG] from resource zip => assets/Resources/ui/topNavigator.js
 [DEBUG] from resource zip => assets/Resources/app.js
 [DEBUG] from resource zip => assets/Resources/appicon.png
-[DEBUG] from resource zip => assets/Resources/checkAll.png
-[DEBUG] from resource zip => assets/Resources/config.js
 [DEBUG] from resource zip => assets/Resources/default.png
-[DEBUG] from resource zip => assets/Resources/delete.png
-[DEBUG] from resource zip => assets/Resources/details.js
-[DEBUG] from resource zip => assets/Resources/loading.png
-[DEBUG] from resource zip => assets/Resources/login.js
-[DEBUG] from resource zip => assets/Resources/loginNew.js
-[DEBUG] from resource zip => assets/Resources/none.png
-[DEBUG] from resource zip => assets/Resources/servers.js
-[DEBUG] from resource zip => assets/Resources/settings.js
-[DEBUG] from resource zip => assets/Resources/status.js
-[DEBUG] from resource zip => assets/Resources/uncheckAll.png
-[DEBUG] from resource zip => assets/Resources/warning.png
 [DEBUG] from resource zip => assets/tiapp.xml
 [DEBUG] from resource zip => res/drawable/appicon.png
 [DEBUG] from resource zip => res/drawable/background.png
+[DEBUG] from resource zip => res/drawable/facebook_icon.png
+[DEBUG] from resource zip => res/drawable/facebook_login.png
+[DEBUG] from resource zip => res/drawable/facebook_login_down.png
+[DEBUG] from resource zip => res/drawable/facebook_login_wide.png
+[DEBUG] from resource zip => res/drawable/facebook_login_wide_down.png
+[DEBUG] from resource zip => res/drawable/facebook_logout.png
+[DEBUG] from resource zip => res/drawable/facebook_logout_down.png
 [DEBUG] from resource zip => res/layout/titanium_tabgroup.xml
 [DEBUG] from resource zip => AndroidManifest.xml
 [DEBUG] from resource zip => resources.arsc
+[DEBUG] from resource zip => res/drawable-hdpi/facebook_icon.png
+[DEBUG] from resource zip => res/drawable-ldpi/facebook_icon.png
 [DEBUG] from resource zip => res/drawable-long-land-hdpi/background.png
+[DEBUG] from resource zip => res/drawable-long-land-hdpi/default_d44e27d97b.png
 [DEBUG] from resource zip => res/drawable-long-land-ldpi/background.png
+[DEBUG] from resource zip => res/drawable-long-land-ldpi/default_d44e27d97b.png
 [DEBUG] from resource zip => res/drawable-long-port-hdpi/background.png
+[DEBUG] from resource zip => res/drawable-long-port-hdpi/default_d44e27d97b.png
 [DEBUG] from resource zip => res/drawable-long-port-ldpi/background.png
+[DEBUG] from resource zip => res/drawable-long-port-ldpi/default_d44e27d97b.png
 [DEBUG] from resource zip => res/drawable-notlong-land-hdpi/background.png
+[DEBUG] from resource zip => res/drawable-notlong-land-hdpi/default_d44e27d97b.png
 [DEBUG] from resource zip => res/drawable-notlong-land-ldpi/background.png
+[DEBUG] from resource zip => res/drawable-notlong-land-ldpi/default_d44e27d97b.png
 [DEBUG] from resource zip => res/drawable-notlong-land-mdpi/background.png
+[DEBUG] from resource zip => res/drawable-notlong-land-mdpi/default_d44e27d97b.png
 [DEBUG] from resource zip => res/drawable-notlong-port-hdpi/background.png
+[DEBUG] from resource zip => res/drawable-notlong-port-hdpi/default_d44e27d97b.png
 [DEBUG] from resource zip => res/drawable-notlong-port-ldpi/background.png
+[DEBUG] from resource zip => res/drawable-notlong-port-ldpi/default_d44e27d97b.png
 [DEBUG] from resource zip => res/drawable-notlong-port-mdpi/background.png
-[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.2/android/modules/titanium-ui.jar => ti/modules/titanium/ui/widget/webview/binding.js
-[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.2/android/modules/titanium-ui.jar => ti/modules/titanium/ui/widget/webview/binding.min.js
-[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.2/android/modules/titanium-ui.jar => ti/modules/titanium/ui/widget/webview/json2.js
-[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.2/android/smalljs.jar => org/mozilla/javascript/resources/Messages.properties
-[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.2/android/smalljs.jar => org/mozilla/javascript/resources/Messages_fr.properties
-[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.2/android/titanium.jar => org/apache/Commons-NOTICE.txt
-[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.2/android/titanium.jar => org/apache/HttpComponents-NOTICE.txt
-[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.2/android/titanium.jar => org/apache/mime4j-NOTICE.txt
-[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.2/android/titanium.jar => org/appcelerator/titanium/build.properties
-[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.2/android/titanium.jar => org/appcelerator/titanium/res/drawable/background.png
-[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.2/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_check_buttonless_on.png
-[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.2/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_check_buttonless_on_18.png
-[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.2/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_check_buttonless_on_48.png
-[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.2/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_more.png
-[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.2/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_more_18.png
-[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.2/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_more_48.png
-[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.2/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_picker_normal.9.png
-[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.2/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_picker_pressed.9.png
-[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.2/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_picker_selected.9.png
-[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.2/android/titanium.jar => org/appcelerator/titanium/res/drawable/default_icon.png
-[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.2/android/titanium.jar => org/appcelerator/titanium/res/drawable/photoDefault.png
+[DEBUG] from resource zip => res/drawable-notlong-port-mdpi/default_d44e27d97b.png
+[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.3/android/titanium.jar => org/apache/Commons-NOTICE.txt
+[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.3/android/titanium.jar => org/apache/HttpComponents-NOTICE.txt
+[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.3/android/titanium.jar => org/apache/mime4j-NOTICE.txt
+[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.3/android/titanium.jar => org/appcelerator/titanium/build.properties
+[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.3/android/titanium.jar => org/appcelerator/titanium/res/drawable/background.png
+[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.3/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_check_buttonless_on.png
+[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.3/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_check_buttonless_on_18.png
+[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.3/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_check_buttonless_on_48.png
+[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.3/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_more.png
+[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.3/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_more_18.png
+[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.3/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_more_48.png
+[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.3/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_picker_normal.9.png
+[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.3/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_picker_pressed.9.png
+[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.3/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_picker_selected.9.png
+[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.3/android/titanium.jar => org/appcelerator/titanium/res/drawable/default_icon.png
+[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.3/android/titanium.jar => org/appcelerator/titanium/res/drawable/photoDefault.png
+[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.3/android/modules/titanium-yahoo.jar => ti/modules/titanium/yahoo/yahoo.js
+[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.3/android/modules/titanium-facebook.jar => ti/modules/titanium/facebook/LICENSE
+[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.3/android/modules/titanium-ui.jar => ti/modules/titanium/ui/widget/webview/binding.js
+[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.3/android/modules/titanium-ui.jar => ti/modules/titanium/ui/widget/webview/binding.min.js
+[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.3/android/modules/titanium-ui.jar => ti/modules/titanium/ui/widget/webview/json2.js
+[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.3/android/smalljs.jar => org/mozilla/javascript/resources/Messages.properties
+[DEBUG] from JAR /home/sivvy/.titanium/mobilesdk/linux/1.7.3/android/smalljs.jar => org/mozilla/javascript/resources/Messages_fr.properties
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.004185 seconds on emulator to get ready
-[INFO] Installing application on emulator
-[INFO] Application installed. Launch from drawer on Home Screen
+[DEBUG] waited 0.004276 seconds on emulator to get ready
+[INFO] Installing application on device
+[INFO] Launching application ... jenkins_status
+[TRACE] Launch output: Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.mobile.jenkins/.Jenkins_statusActivity }
+
+[INFO] Deployed jenkins_status ... Application should be running.
+[INFO] Android Emulator has exited
