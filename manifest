@@ -1,8 +1,8 @@
-#appname:jenkins_status
-#publisher:sivvy
-#url:http://192.168.3.130
-#image:appicon.png
-#appid:com.mobile.jenkins
-#desc:not specified
-#type:mobile
-#guid:b1c308df-f0f6-4f71-8659-a5a105d2d5b0
+#appname: Jenkins-Mobile
+#publisher: lowks
+#url: http://
+#image: appicon.png
+#appid: com.lcalink.jenkins
+#desc: undefined
+#type: ipad
+#guid: 1b19f09e-9b05-4bcc-b337-db9ff8791f06

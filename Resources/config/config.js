@@ -26,9 +26,9 @@
 			"url" : "http://lobster.lcalink.com:8080/rssLatest",
 			"visible":true
 		},
-		"error" : {
-			"title": "error",
-			"url" : "http://lcalink.dyndns.org/jenkins-cot/job/LUCIA_BI_dashboards/rssAll1111111111111111111111111111111",
+		"Live-Jenkins" : {
+			"title": "Live-Jenkins",
+			"url" : "http://ci.jenkins-ci.org/view/Jenkins%20core/rssAll",
 			"visible":true
 		},/*
 		"Emiko" : {

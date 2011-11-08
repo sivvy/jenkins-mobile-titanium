@@ -4,11 +4,10 @@
 (function() {
 var tableview;
 	jenkins.ui.renderDetailView = function( win, title, currentUrl ) {
-		tableview = Titanium.UI.createTableView({
-		   id: title,
-		   currentUrl: currentUrl,
-	       top: 160
-	    });
+		tableview = Titanium.UI.createTableView( jenkins.mixin( {}, jenkins.ui.css.listView, {
+													id: title,
+													currentUrl: currentUrl
+									}));
 		onloadCallback = function() {
 			try {
 				var xmlMessage = this.responseXML;
@@ -112,7 +111,7 @@ var tableview;
 			 */
 			var tableData = [];
 			
-			for ( var i  = 0; i < data.length; i++ ) {
+			for ( var i = 0; i < data.length; i++ ) {
 				var currentRow = Ti.UI.createTableViewRow({
 					height: 70
 				});
@@ -121,7 +120,7 @@ var tableview;
 				 * status icon 
 				 */
 				var statusImage = Ti.UI.createImageView({
-					image: data[i].status,
+					backgroundImage: data[i].status,
 					width: 57,
 					height: 46,
 					left: 5,
@@ -167,7 +166,7 @@ var tableview;
 				 * build time
 				 */
 				var timeImage = Ti.UI.createImageView({
-					image: "images/icon-time.png", /* crappy time icon */
+					backgroundImage: "images/icon-time.png", /* crappy time icon */
 					width: 10,
 					height: 10,
 					left: 0,

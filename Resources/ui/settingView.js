@@ -20,7 +20,7 @@
 		 */
 		var buttonbar = Ti.UI.createView({
 			height: 60,
-			backgroundColor: "#0788ff",
+			backgroundColor: "#000",
 			top: 0
 		});
 		
@@ -116,8 +116,8 @@
 		var tableview = Titanium.UI.createTableView({
 			data: data,
 			top: 160,
-			left: 30,
-			right: 30
+			left: 10,
+			right: 10
 		});
 		win.add( tableview );
 		
@@ -126,7 +126,7 @@
 		});
 		
 		swipeflag = false;
-		tableview.addEventListener("click", function( ev ) {
+		selectFunction = function( ev ) {
 			if ( swipeflag ) {
 				swipeflag = false;
 				return;
@@ -139,16 +139,22 @@
 			}
 			else {
 				if (ev.rowData.backgroundColor ==  "#0c67d1") {
-					config[ev.rowData.title]["visible"] = false;
+					config[ev.rowData.text]["visible"] = false;
 					ev.rowData.backgroundColor = "#fff";
-					ev.rowData.color = "#757575";
+					//ev.rowData.color = "#757575";
 				} else {
-					config[ev.rowData.title]["visible"] = true;
-					ev.rowData.color = "#a1cdfb";
+					config[ev.rowData.text]["visible"] = true;
+					//ev.rowData.color = "#a1cdfb";
 					ev.rowData.backgroundColor =  "#0c67d1"
 				}
 			}
-		});
+		};
+		if ( jenkins.ui.isAndroid() ) {
+			tableview.addEventListener( "click", selectFunction );
+		} else {
+			tableview.addEventListener( "singletap", selectFunction );
+		}
+		
 		
 		
 		/**
@@ -189,17 +195,24 @@
 		}
 		
 		timer = null;
-		tableview.addEventListener("touchstart", function( ev ) {
-			timer = setTimeout(function() {
-				Ti.API.log("Robin-table-swipe", ev);
-				jenkins.ui.createAddServerView( win, tableview, ev.source.title );
-				swipeflag = true;
-			}, 1000);
-			
-		});
-		tableview.addEventListener("touchend", function( ev ) {
-			clearTimeout( timer );
-		});
+		if ( jenkins.ui.isAndroid() ) {
+			tableview.addEventListener("touchstart", function( ev ) {
+				timer = setTimeout(function() {
+					Ti.API.log("Robin-table-swipe", ev.source.text);
+					jenkins.ui.createAddServerView( win, tableview, ev.source.text );
+					swipeflag = true;
+				}, 1000);
+				
+			});
+			tableview.addEventListener("touchend", function( ev ) {
+				clearTimeout( timer );
+			});
+		} else {
+			tableview.addEventListener("doubletap", function( ev ) {
+					Ti.API.log("Robin-table-swipe", ev.source);
+					jenkins.ui.createAddServerView( win, tableview, ev.source.text );
+			});
+		}
 		donebutton.addEventListener("click", function() {
 			//set the config to properties as array
 			var configArray = [];
@@ -234,24 +247,13 @@
 		/**
 		 * popup to add server
 		 */
-		var newServerView = Ti.UI.createView({
-			top: 130,
-			left: 50,
-			right: 50,
-			height: 310,
-			backgroundColor: "#424542",
-			borderRadius: 2,
-			borderWidth: 1,
-			borderColor: "#bdbebd",
-			visible: false
-		});
+		var newServerView = Ti.UI.createView( jenkins.ui.css.settingNewPopup );
 		
-		var addtitleText = Ti.UI.createLabel({
-			text: "New Server",
-			height: 40,
-			color: "#fff",
-			font: { fontSize: 20 },
-		});
+		var addtitleText = Ti.UI.createLabel(
+			jenkins.mixin( {}, jenkins.ui.css.setttingNewPopupTitle, {
+													text: "New Server"
+									})
+		);
 		
 		var addtitleview = Ti.UI.createView({
 			top: 0,
@@ -263,64 +265,49 @@
 		/**
 		 * textfield for new server name
 		 */
-		var servername = Titanium.UI.createTextField({
-			color: "#336699",
-			top: 50,
-			width: 350,
-			height: 90,
-			hintText: "Server Name",
-			value: configServername,
-			keyboardType: Titanium.UI.KEYBOARD_DEFAULT,
-			returnKeyType: Titanium.UI.RETURNKEY_DEFAULT,
-			borderStyle: Titanium.UI.INPUT_BORDERSTYLE_ROUNDED
-		});
+		var servername = Titanium.UI.createTextField(
+			jenkins.mixin( {}, jenkins.ui.css.setttingNewPopupInput, {
+													top: 50,
+													hintText: "Server Name",
+													value: configServername
+									})
+		);
 		newServerView.add(servername);
 		
 		/**
 		 * text field for new server url
 		 */
-		var url = Titanium.UI.createTextField({
-			color: "#336699",
-			top: 150,
-			width: 350,
-			height: 90,
-			hintText: "Server URL",
-			value: configServerurl,
-			// passwordMask:true,
-			keyboardType: Titanium.UI.KEYBOARD_DEFAULT,
-			returnKeyType: Titanium.UI.RETURNKEY_DEFAULT,
-			borderStyle: Titanium.UI.INPUT_BORDERSTYLE_ROUNDED
-		});
+		var url = Titanium.UI.createTextField(
+			jenkins.mixin( {}, jenkins.ui.css.setttingNewPopupInput, {
+													top: 110,
+													hintText: "Server URL",
+													value: configServerurl
+									})
+		);
 		newServerView.add(url);
 		
 		/**
 		 * button for confirm server details
 		 */
-		var confirmadd = Titanium.UI.createButton({
-			title: "SAVE",
-			top: 250,
-			left: 10,
-			width: 100,
-			height: 45,
-			borderRadius: 1,
-			color: "#666464",
-			font: {fontFamily: "Arial", fontWeight: "bold", fontSize: 15}
-		});
+		var confirmadd = Titanium.UI.createButton(
+				jenkins.mixin( {}, jenkins.ui.css.setttingNewPopupButton, {
+													top: 170,
+													left: 10,
+													title: "SAVE"
+									})
+		);
 		newServerView.add( confirmadd );
 		
 		/**
 		 * button to cancel adding server action
 		 */
-		var canceladd = Titanium.UI.createButton({
-			title: "CANCEL",
-			top: 250,
-			right: 10,
-			width: 100,
-			height: 45,
-			borderRadius:1,
-			color: "#666464",
-			font: {fontFamily: "Arial", fontWeight: "bold", fontSize: 15}
-		});
+		var canceladd = Titanium.UI.createButton(
+			jenkins.mixin( {}, jenkins.ui.css.setttingNewPopupButton, {
+													top: 170,
+													right: 10,
+													title: "CANCEL"
+									})
+		);
 		newServerView.add( canceladd );
 		
 		win.add( newServerView );
@@ -354,19 +341,21 @@
 	
 	function createTableRow( text ) {
 		var tableRow = Ti.UI.createTableViewRow({
-			title: text,
+			//title: text,
+			text: text,
 			backgroundColor: "#0c67d1",
 			color: "#a1cdfb",
-			height: 75
+			height: 50
 			//rightImage: "images/icon-delete.png"
 		});
 		var labelView = Ti.UI.createView({
 			id: "tableView",
 			title: text,
+			text: text,
 			left: 10
 		});
 		var textLabel = Ti.UI.createLabel({
-			title: text,
+			//title: text,
 			text: text,
 			color: "#a1cdfb",
 			left: 10,
@@ -376,8 +365,8 @@
 		var removeButton = Ti.UI.createButton({
 			id: "removeButton",
 			text: text,
-			backgroundColor: "#0c67d1",
-			image: "images/icon-delete.png",
+			//backgroundColor: "#0c67d1",
+			backgroundImage: "images/icon-delete.png",
 			height: 30,
 			width: 33,
 			right: 10

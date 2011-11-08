@@ -62,11 +62,10 @@ var currentServer, currentUrl, tableview, ctr, rowContainer,
 		};
 		
 		mytablerocks = function() {
-			tableview = Titanium.UI.createTableView( {
-				id: "servers",
-				top: 160
-				// separatorColor: "transparent"
-			} );
+			tableview = Titanium.UI.createTableView( jenkins.mixin( {}, jenkins.ui.css.listView, {
+													id: "servers"
+											})
+			);
 
 			for ( currentServer in jenkins.config ) {
 				if ( jenkins.config[currentServer]["visible"] == true ) {

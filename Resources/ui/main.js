@@ -1,15 +1,38 @@
 
 
 (function() {
-	jenkins.ui = {};
+	jenkins.ui = {
+		__isLargeScreen: undefined,
+	    __isAndroid: undefined
+	};
 	jenkins.currentViewId = null;
 	jenkins.ui.loadingBox = Titanium.UI.createActivityIndicator({
 		bottom: 10, 
 		height: 20,
 		width: 10,
-		message: "Loading...",
+		message: "Loading..."
 	});
-		
+	
+	
+	
+	jenkins.ui.isLargeScreen = function() {
+		if (jenkins.ui.__isLargeScreen === undefined) {
+			jenkins.ui.__isLargeScreen = (Ti.Platform.displayCaps.platformWidth >= 600);
+		}
+		return jenkins.ui.__isLargeScreen;
+	};
+
+	jenkins.ui.isAndroid = function() {
+		if (jenkins.ui.__isAndroid === undefined) {
+			jenkins.ui.__isAndroid = (Ti.Platform.osname == 'android');
+		}
+		return jenkins.ui.__isAndroid;
+	}
+	if (jenkins.ui.isAndroid()) {
+		Ti.include("/config/android-css.js");
+	} else {
+		Ti.include("/config/iphone-css.js");
+	}
 	jenkins.ui.init = function() {
 		Titanium.UI.setBackgroundColor( "#fff" );
 		
@@ -21,7 +44,14 @@
 		//the logo close
 		//main window
 		serverWindow = jenkins.ui.createMainWindow();
-		serverWindow.add( jenkins.ui.createTitleBar( serverWindow ) );
+		serverWindow.add( jenkins.ui.createTitleBar( "Jenkins servers" ) );
+		// separator
+		serverWindow.add( Ti.UI.createView({
+		    top: 30,
+		    height: 1,
+		    zIndex: 99,
+		    backgroundColor: "#ccc"
+		}) );
 		
 		//actionbar
 		buttonbar = jenkins.ui.createNavigatorView( serverWindow );
@@ -39,7 +69,7 @@
 		
 		serverWindow.fireEvent( "serverList.reload" );
 		
-		
+		Ti.API.log("TA Button", jenkins.ui.css.titleBar);
 		//To keep track on current view
 		jenkins.currentViewId = "servers";
 		

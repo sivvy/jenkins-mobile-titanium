@@ -45,19 +45,20 @@
 		exitOnClose:true,
 		top: 0
 	});
+	/*
 	var titleBar = Ti.UI.createView({
 		top:0,
-		height:60,
+		height: jenkins.ui.css.topBarHeight,
 		backgroundColor: "#0788ff"
 	});
 	var pageTitle = Ti.UI.createLabel({
 		text: "Jenkins Servers",
-		font:{fontSize:18, fontWeight: "bold", fontFamily: "Arial"},
+		font: {fontSize:18, fontWeight: "bold", fontFamily: "Arial"},
 		left:25,
 		color: "#fff"
 	});
 	titleBar.add(pageTitle);
-	serversWindow.add(titleBar);
+	serversWindow.add(titleBar);*/
 	return serversWindow;
   };
   
