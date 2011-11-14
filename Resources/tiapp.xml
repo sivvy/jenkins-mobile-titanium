@@ -10,10 +10,10 @@
     <id>com.lcalink.jenkins</id>
     <name>jenkins</name>
     <version>1.0</version>
-    <publisher>lowks</publisher>
+    <publisher>sivvy</publisher>
     <url>http://</url>
     <description>not specified</description>
-    <copyright>2011 by lowks</copyright>
+    <copyright>2011 by sivvy</copyright>
     <icon>appicon.png</icon>
     <persistent-wifi>false</persistent-wifi>
     <prerendered-icon>false</prerendered-icon>
